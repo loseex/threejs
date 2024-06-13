@@ -1,9 +1,9 @@
 import { useTexture } from "@react-three/drei";
 import { FC } from "react";
+import { RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 
 import floorTexture from "/grid.png";
-import { RigidBody } from "@react-three/rapier";
 
 export const Ground: FC = (): JSX.Element => {
   const texture = useTexture(floorTexture);
