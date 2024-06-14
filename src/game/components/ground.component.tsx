@@ -10,10 +10,10 @@ export const Ground: FC = (): JSX.Element => {
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
   return (
-    <RigidBody>
+    <RigidBody type="fixed">
       <mesh position={[0, -5, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[250, 250]} />
-        <meshStandardMaterial color="gray" map={texture} />
+        <meshStandardMaterial color="orange" map={texture} />
       </mesh>
     </RigidBody>
   );

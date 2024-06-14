@@ -3,15 +3,16 @@ import { FC } from "react";
 import { useTexture } from "@react-three/drei";
 
 import boxTexture from "/box.jpg";
+import { Vector3 } from "three";
 
-export const Box: FC = (): JSX.Element => {
+export const Box: FC<{ position: Vector3 }> = ({ position }): JSX.Element => {
   const texture = useTexture(boxTexture);
 
   return (
-    <RigidBody>
-      <mesh position={[0, 3, -5]} scale={[3, 3, 3]}>
+    <RigidBody mass={10}>
+      <mesh position={position} scale={[3, 3, 3]}>
         <boxGeometry />
-        <meshStandardMaterial color="white" map={texture} />
+        <meshStandardMaterial color="#f7f7f7" map={texture} />
       </mesh>
     </RigidBody>
   );
